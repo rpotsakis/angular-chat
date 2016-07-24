@@ -19,8 +19,15 @@ describe('chat app', function() {
 
 
     it('should render chat-list when user navigates to /chat-list', function() {
-      expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for chat list view/);
+      expect(element.all(by.css('[ng-view] h1')).first().getText()).
+        toMatch(/Messages/);
+    });
+
+    it('should render chat-details when user clicks chat link', function(){
+      element.all(by.css('.list-group-item a')).
+        first().
+        click();
+      expect(browser.getLocationAbsUrl()).toMatch("/chat-details");
     });
 
   });
