@@ -9,6 +9,26 @@ angular.module('myApp.chatList', ['ngRoute'])
   });
 }])
 
-.controller('ChatListCtrl', [function() {
+.service('chatListService', function($http) {
+    this.getData = function() {
+        return $http({
+            method: 'GET',
+            url: 'mockdata/chat-list.json'
+         });
+    }
+})
 
+.controller('ChatListCtrl', ['$scope', '$location', 'chatListService', function($scope, $location, chatListService) {
+	$scope.chats = [];
+
+	chatListService.getData().then(function(response) {
+        $scope.chats = response.data;
+    })
+	.catch(function() {
+		$scope.error = 'unable to retrieve chat list data';
+	});
+
+  $scope.viewItem = function(id) {
+    $location.path('chat-details/'+id);
+  };
 }]);
