@@ -1,3 +1,12 @@
+<md-toolbar class="md-theme-light">
+	<h2 class="md-toolbar-tools">
+		<span>Messages</span>
+		<span flex></span>
+		<md-button ng-click="null">
+			<md-icon md-font-icon="create">create</md-icon>
+		</md-button>
+	</h2>
+</md-toolbar>
 <div>
 	<md-list>
 	  <md-list-item class="md-3-line" ng-repeat="chat in chats" ng-click="viewItem(chat.id)">
