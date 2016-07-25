@@ -19,12 +19,12 @@ describe('chat app', function() {
 
 
     it('should render chat-list when user navigates to /chat-list', function() {
-      expect(element.all(by.css('[ng-view] h1')).first().getText()).
+      expect(element.all(by.css('[ng-view] h2')).first().getText()).
         toMatch(/Messages/);
     });
 
     it('should render chat-details when user clicks chat link', function(){
-      element.all(by.css('.list-group-item a')).
+      element.all(by.css('md-list-item button')).
         first().
         click();
       expect(browser.getLocationAbsUrl()).toMatch("/chat-details");
