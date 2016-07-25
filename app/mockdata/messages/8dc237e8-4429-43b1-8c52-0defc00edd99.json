@@ -1,0 +1,111 @@
+[
+  {
+    "id": "00aaf53f-ec46-447e-9e92-0b0964d2ca7a",
+    "body": "Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo.",
+    "sender": {
+    	"id":"0622a9f2-b2b6-478b-bb83-f0735c8dfc4f",
+    	"firstName": "Fred",
+    	"lastName": "Flintstone",
+    	"avatar": "https://robohash.org/adprovidentarchitecto.png?size=60x60&set=set1"
+    },
+    "createdDate": "3/8/2016",
+    "createdTime": "4:14 PM"
+  },
+  {
+    "id": "e2e030ea-9a33-4448-8e25-f97e04fa970e",
+    "body": "Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.",
+    "sender": {
+    	"id":"0622a9f2-b2b6-478b-bb83-f0735c8dfc4f",
+    	"firstName": "Fred",
+    	"lastName": "Flintstone",
+    	"avatar": "https://robohash.org/adprovidentarchitecto.png?size=60x60&set=set1"
+    },
+    "lastAvatar": "https://robohash.org/voluptatibusquisatque.bmp?size=60x60&set=set1",
+    "createdDate": "7/26/2015",
+    "createdTime": "12:51 PM"
+  },
+  {
+    "id": "264a1a267-a8bb-40d8-9972-cb8627affe26",
+    "body": "Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.",
+    "sender": {
+    	"id":"0622a9f2-b2b6-478b-bb83-f0735c8dfc4f",
+    	"firstName": "Judy",
+    	"lastName": "Jetson",
+    	"avatar": "https://robohash.org/voluptatemblanditiisid.png?size=60x60&set=set1"
+    },
+    "createdDate": "5/7/2016",
+    "createdTime": "1:21 AM"
+  },
+  {
+    "id": "9db594a7-5da9-49ca-8df7-6ac6fa03b90b",
+    "body": "Nam tristique tortor eu pede.",
+    "sender": {
+    	"id":"e7fe026d-49e8-4c21-919c-215369d269bb",
+    	"firstName": "Stan",
+    	"lastName": "Winston",
+    	"avatar": "https://robohash.org/ametverodolore.png?size=60x60&set=set1"
+    },
+    "createdDate": "11/14/2015",
+    "createdTime": "6:10 PM"
+  },
+  {
+    "id": "e7fe026d-49e8-4c21-919c-215369d269bb",
+    "body": "Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia.",
+    "sender": {
+    	"id":"e7fe026d-49e8-4c21-919c-215369d269bb",
+    	"firstName": "Stan",
+    	"lastName": "Winston",
+    	"avatar": "https://robohash.org/ametverodolore.png?size=60x60&set=set1"
+    },
+    "createdDate": "8/11/2015",
+    "createdTime": "8:26 PM"
+  },
+  {
+    "id": "98014749-64fe-4da7-8f74-0cfd56346c5f",
+    "body": "Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius.",
+    "sender": {
+    	"id":"e7fe026d-49e8-4c21-919c-215369d269bb",
+    	"firstName": "Stan",
+    	"lastName": "Winston",
+    	"avatar": "https://robohash.org/ametverodolore.png?size=60x60&set=set1"
+    },
+    "createdDate": "7/29/2015",
+    "createdTime": "8:43 PM"
+  },
+  {
+    "id": "b454449d-38bf-4d50-8b11-970d3bed2142",
+    "body": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.",
+    "sender": {
+    	"id":"e7fe026d-49e8-4c21-919c-215369d269bb",
+    	"firstName": "Stan",
+    	"lastName": "Winston",
+    	"avatar": "https://robohash.org/ametverodolore.png?size=60x60&set=set1"
+    },
+    "createdDate": "5/28/2016",
+    "createdTime": "2:38 PM"
+  },
+  {
+    "id": "6e85ee0f-d2d2-4d55-8ef8-70bd9624fb7a",
+    "body": "Nulla mollis molestie lorem. Quisque ut erat.",
+    "sender": {
+    	"id":"e7fe026d-49e8-4c21-919c-215369d269bb",
+    	"firstName": "Stan",
+    	"lastName": "Winston",
+    	"avatar": "https://robohash.org/ametverodolore.png?size=60x60&set=set1"
+    },
+    "createdDate": "6/12/2016",
+    "createdTime": "4:10 PM"
+  },
+  {
+    "id": "25d573f4-9ff5-432f-b76c-c6cee7c27fa5",
+    "body": "Nunc purus. Phasellus in felis. Donec semper sapien a libero.",
+    "sender": {
+    	"id":"e7fe026d-49e8-4c21-919c-215369d269bb",
+    	"firstName": "Stan",
+    	"lastName": "Winston",
+    	"avatar": "https://robohash.org/ametverodolore.png?size=60x60&set=set1"
+    },
+    "createdDate": "10/8/2015",
+    "createdTime": "7:21 AM"
+  }
+]
