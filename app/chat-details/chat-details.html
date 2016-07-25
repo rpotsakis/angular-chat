@@ -1,1 +1,30 @@
-<p>This is the partial for chat details view</p>
+<md-toolbar class="md-theme-light">
+	<h2 class="md-toolbar-tools">
+		<md-button ng-href="#!/chat-list">
+			<md-icon>arrow_back</md-icon>
+		</md-button>
+		<span>Chat Details</span>
+		<span flex></span>
+		<md-button ng-click="null">
+			<md-icon>add</md-icon>
+		</md-button>
+	</h2>
+</md-toolbar>
+<div class="myapp-message-list">
+	<div ng-repeat="message in messages">
+		<div layout="row" layout-align="center end" layout-padding>
+			<div flex="none">
+				<img class="md-avatar" ng-src="{{message.sender.avatar}}" style="width:60px;">
+			</div>
+			<div class="myapp-message" flex>
+				<div class="md-list-item-text">
+					<p>{{message.body}}</p>
+				</div>
+				<div class="myapp-message-arrow"></div>
+			</div>
+		</div>
+		<div class="myapp-message-info" layout="row" layout-align="end center">
+			<p flex="20">{{message.sender.firstName}} {{message.createdTime}}</p>
+		</div>
+	</div>
+</div>

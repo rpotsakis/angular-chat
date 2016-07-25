@@ -37,4 +37,20 @@ describe('chat app', function() {
 
   });
 
+  describe('chat-details', function() {
+
+    beforeEach(function() {
+      browser.get('index.html#!/chat-list');
+      element.all(by.css('md-list-item button')).
+        first().
+        click();
+    });
+
+    it('should render chat-details when user navigates to /chat-details', function() {
+      expect(element.all(by.css('[ng-view] h2')).first().getText()).
+        toMatch(/Chat Details/);
+    });
+
+  });
+
 });
