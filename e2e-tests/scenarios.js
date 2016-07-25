@@ -53,4 +53,23 @@ describe('chat app', function() {
 
   });
 
+  describe('chat-details service error', function() {
+
+    beforeEach(function() {
+      browser.get('index.html#!/chat-list');
+      element.all(by.css('md-list-item button')).
+        get(5).
+        click();
+    });
+
+    it('should render chat-details and dialog with error', function() {
+      expect(element.all(by.css('[ng-view] h2')).first().getText()).
+        toMatch(/Chat Details/);
+
+      expect(element.all(by.css('md-dialog h2')).first().getText()).
+        toMatch(/Service Error/);
+    });
+
+  });
+
 });
