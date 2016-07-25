@@ -23,6 +23,11 @@ describe('chat app', function() {
         toMatch(/Messages/);
     });
 
+    it('should render at least 1 list item', function() {
+      expect(element.all(by.css('md-list-item')).count()).
+        toBeGreaterThan(1);
+    });
+
     it('should render chat-details when user clicks chat link', function(){
       element.all(by.css('md-list-item button')).
         first().
