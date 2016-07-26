@@ -73,7 +73,8 @@ angular.module('myApp.chatDetails', ['ngRoute','ngSanitize'])
 			createdTime: messageFactory.makeCreatedTime()
 		};
 		$scope.messages.push(message);
-	}
+		$scope.sendMessageVal = '';
+	};
 
 }])
 

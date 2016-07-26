@@ -104,4 +104,29 @@ describe('chat app', function() {
 
   });
 
+    describe('chat-details new message', function() {
+
+      beforeEach(function() {
+        browser.get('index.html#!/chat-list');
+        element.all(by.css('md-list-item button')).
+          get(1).
+          click();
+      });
+
+      it('should render new chat entered by user', function() {
+        expect(element.all(by.css('[ng-view] h2')).first().getText()).
+          toMatch(/Chat Details/);
+
+        var formInput = element.all(by.css('footer textarea')).first();
+        formInput.clear().sendKeys('Test Hello');
+
+        element.all(by.css('footer button')).first().
+        click();
+
+        expect(element.all(by.css('message-sent .myapp-message p')).last().getText()).
+          toMatch(/Test Hello/);
+      });
+
+    });
+
 });

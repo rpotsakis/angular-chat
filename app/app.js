@@ -50,6 +50,19 @@ angular.module('myApp', [
 		createImgTag: function(src, width) {
 			width = width || 16;
 			return '<img src="' + src + '" style="width: ' + width + 'px;" />';
+		},
+		makeCreatedDate: function() {
+			var currentDate =  new Date();
+			return currentDate.getDate() + '/' + currentDate.getDay() + '/' + currentDate.getFullYear();
+		},
+		makeCreatedTime: function() {
+			var currentDate =  new Date(),
+				hours = currentDate.getHours(),
+				minutes = currentDate.getMinutes(),
+				displayHour = (hours > 12) ? (hours - 12) : hours,
+				displayMinute = (minutes < 10) ? '0' + minutes : minutes,
+				displayEnd = (hours >= 12) ? 'PM' : 'AM';
+			return displayHour + ':' + displayMinute + ' ' + displayEnd;
 		}
 	};
 });

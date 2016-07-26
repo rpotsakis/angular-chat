@@ -12,7 +12,7 @@
 		</h2>
 	</md-toolbar>
 
-	<md-content flex layout-padding>
+	<md-content flex layout-padding id="myapp-messages-content">
 		<div ng-repeat="message in messages"  class="myapp-message-list">
 			<div ng-if="message.sender.id == user.id">
 				<message-sent></message-sent>
@@ -30,7 +30,7 @@
 				<label>Send Message</label>
 				<textarea name="sendMessage" ng-model="sendMessageVal"></textarea>
 			</md-input-container>
-			<md-button aria-label="Send" flex="none" ng-click="addMessage()">
+			<md-button aria-label="Send" flex="none" ng-click="addMessage()" ng-disabled="!sendMessageVal.length">
 				<md-icon>send</md-icon>
 			</md-button>
 		</div>
