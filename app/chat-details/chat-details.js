@@ -19,13 +19,17 @@ angular.module('myApp.chatDetails', ['ngRoute','ngSanitize'])
     }
 })
 
-.controller('ChatDetailsCtrl', ['$scope','$routeParams', '$location', '$mdDialog', '$sce', 'chatDetailsService', 'userFactory', 'messageFactory', function($scope, $routeParams, $location, $mdDialog, $sce, chatListService, userFactory, messageFactory) {
+.controller('ChatDetailsCtrl', 
+	['$scope','$routeParams', '$location', '$mdDialog', '$sce', '$timeout', 'chatDetailsService', 'userFactory', 'messageFactory', 
+	function($scope, $routeParams, $location, $mdDialog, $sce, $timeout, chatListService, userFactory, messageFactory) {
+
 	$scope.chatId = $routeParams.chatId
 	$scope.messages = [];
 	$scope.user = userFactory.getUser();
 
 	chatListService.getData($scope.chatId).then(function(response) {
 		$scope.messages = $scope.sanitizeData(response.data);
+		$scope.scrollToBottom(2500);
 	})
 	.catch(function() {
 		$scope.showAlert();
@@ -75,6 +79,18 @@ angular.module('myApp.chatDetails', ['ngRoute','ngSanitize'])
 		$scope.messages.push(message);
 		$scope.sendMessageVal = '';
 	};
+
+	$scope.$watchCollection(
+        "messages",
+        function( newValue, oldValue ) {
+        	$scope.scrollToBottom(10);
+        }
+    );
+
+    $scope.scrollToBottom = function(delay){
+    	var con = document.getElementById('myapp-messages-content');
+        $timeout(function() { con.scrollTop = con.scrollHeight; }, delay, true);
+    };
 
 }])
 
