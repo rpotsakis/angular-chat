@@ -1,24 +1,26 @@
-<md-toolbar class="md-theme-light">
-	<h2 class="md-toolbar-tools">
-		<span>Messages</span>
-		<span flex></span>
-		<md-button ng-click="null">
-			<md-icon md-font-icon="create">create</md-icon>
-		</md-button>
-	</h2>
-</md-toolbar>
-<div>
-	<md-list>
-		<md-list-item class="md-3-line" ng-repeat="chat in chats" ng-click="viewItem(chat.id)">
-			<img class="md-avatar" ng-src="{{chat.lastAvatar}}">
-			<div class="md-list-item-text">
-				<div layout="row">
-					<h3 flex>{{chat.lastSender}}</h3>
-					<p flex="15">{{chat.modifiedTime}}</p>
+<div layout="column" flex style="max-height: 100vh;">
+	<md-toolbar class="md-theme-light">
+		<h2 class="md-toolbar-tools">
+			<span>Messages</span>
+			<span flex></span>
+			<md-button ng-click="null">
+				<md-icon md-font-icon="create">create</md-icon>
+			</md-button>
+		</h2>
+	</md-toolbar>
+	<md-content flex>
+		<md-list>
+			<md-list-item class="md-3-line" ng-repeat="chat in chats" ng-click="viewItem(chat.id)">
+				<img class="md-avatar" ng-src="{{chat.lastAvatar}}">
+				<div class="md-list-item-text">
+					<div layout="row">
+						<h3 flex>{{chat.lastSender}}</h3>
+						<p flex="15">{{chat.modifiedTime}}</p>
+					</div>
+					<p>{{chat.lastMessage | limitTo:100}}</p>
 				</div>
-				<p>{{chat.lastMessage | limitTo:100}}</p>
-			</div>
-			<md-divider md-inset ng-if="!$last"></md-divider>
-		</md-list-item>
-	</md-list>
+				<md-divider md-inset ng-if="!$last"></md-divider>
+			</md-list-item>
+		</md-list>
+	</md-content>
 </div>

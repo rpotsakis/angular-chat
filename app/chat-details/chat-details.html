@@ -1,22 +1,38 @@
-<md-toolbar class="md-theme-light">
-	<h2 class="md-toolbar-tools">
-		<md-button ng-href="#!/chat-list">
-			<md-icon>arrow_back</md-icon>
-		</md-button>
-		<span>Chat Details</span>
-		<span flex></span>
-		<md-button ng-click="null">
-			<md-icon>add</md-icon>
-		</md-button>
-	</h2>
-</md-toolbar>
-<div class="myapp-message-list">
-	<div ng-repeat="message in messages">
-		<div ng-if="message.sender.id == user.id">
-			<message-sent></message-sent>
+<div layout="column" flex style="max-height: 100vh; min-height: 100vh;">
+	<md-toolbar flex="none" class="md-theme-light">
+		<h2 class="md-toolbar-tools">
+			<md-button ng-href="#!/chat-list">
+				<md-icon>arrow_back</md-icon>
+			</md-button>
+			<span>Chat Details</span>
+			<span flex></span>
+			<md-button ng-click="null">
+				<md-icon>add</md-icon>
+			</md-button>
+		</h2>
+	</md-toolbar>
+
+	<md-content flex layout-padding>
+		<div ng-repeat="message in messages"  class="myapp-message-list">
+			<div ng-if="message.sender.id == user.id">
+				<message-sent></message-sent>
+			</div>
+			<div ng-if="message.sender.id != user.id">
+				<message-recieved></message-recieved>
+			</div>
 		</div>
-		<div ng-if="message.sender.id != user.id">
-			<message-recieved></message-recieved>
+	</md-content>
+	<span flex></span>
+	<md-divider></md-divider>
+	<footer flex="none">
+		<div layout="row" flex="100">
+			<md-input-container flex>
+				<label>Send Message</label>
+				<textarea name="sendMessage"></textarea>
+			</md-input-container>
+			<md-button aria-label="Send" flex="none">
+				<md-icon>send</md-icon>
+			</md-button>
 		</div>
-	</div>
+	</footer>
 </div>
