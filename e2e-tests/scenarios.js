@@ -55,6 +55,12 @@ describe('chat app', function() {
 
       expect(element.all(by.css('message-sent')).count()).
         toEqual(1);
+
+      expect(element.all(by.css('message-recieved .myapp-message img')).first().getAttribute('src')).
+        toMatch(/assets\/emoticons\/smile.png/);
+
+      expect(element.all(by.css('message-sent .myapp-message img')).first().getAttribute('src')).
+        toMatch(/assets\/emoticons\/disappointed.png/);
     });
 
   });

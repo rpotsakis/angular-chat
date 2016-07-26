@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.chatDetails', ['ngRoute'])
+angular.module('myApp.chatDetails', ['ngRoute','ngSanitize'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider
@@ -19,18 +19,30 @@ angular.module('myApp.chatDetails', ['ngRoute'])
     }
 })
 
-.controller('ChatDetailsCtrl', ['$scope','$routeParams', '$location', '$mdDialog', 'chatDetailsService', 'userFactory', function($scope, $routeParams, $location, $mdDialog, chatListService, userFactory) {
+.controller('ChatDetailsCtrl', ['$scope','$routeParams', '$location', '$mdDialog', '$sce', 'chatDetailsService', 'userFactory', 'messageFactory', function($scope, $routeParams, $location, $mdDialog, $sce, chatListService, userFactory, messageFactory) {
 	$scope.chatId = $routeParams.chatId
 	$scope.messages = [];
 	$scope.user = userFactory.getUser();
 
 	chatListService.getData($scope.chatId).then(function(response) {
-		$scope.messages = response.data;
+		$scope.messages = $scope.sanitizeData(response.data);
 	})
 	.catch(function() {
 		$scope.showAlert();
 		$scope.error = 'unable to retrieve chat details data';
 	});
+
+	$scope.sanitizeData = function(data) {
+		for(var i in data) {
+			data[i].body = messageFactory.replaceEmoticons(data[i].body);
+		}
+
+		return data;
+	};
+
+	$scope.trustMessageBody = function(body){
+		return $sce.trustAsHtml(body);
+	};
 
 	$scope.showAlert = function() {
 		$mdDialog.show(

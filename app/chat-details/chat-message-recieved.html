@@ -4,7 +4,7 @@
 	</div>
 	<div class="myapp-message" flex>
 		<div class="md-list-item-text">
-			<p>{{message.body}}</p>
+			<p ng-bind-html="trustMessageBody(message.body)"></p>
 		</div>
 		<div class="myapp-message-arrow myapp-message-arrow--left"></div>
 	</div>

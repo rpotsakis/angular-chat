@@ -1,7 +1,7 @@
 [
   {
     "id": "00aaf53f-ec46-447e-9e92-0b0964d2ca7a",
-    "body": "Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo.",
+    "body": "Morbi ut odio. :smile: Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo.",
     "sender": {
     	"id":"0622a9f2-b2b6-478b-bb83-f0735c8dfc4f",
     	"firstName": "Walter",
@@ -13,7 +13,7 @@
   },
   {
     "id": "e2e030ea-9a33-4448-8e25-f97e04fa970e",
-    "body": "Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.",
+    "body": "Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. :joy:",
     "sender": {
     	"id":"0622a9f2-b2b6-478b-bb83-f0735c8dfc4f",
     	"firstName": "Walter",
@@ -37,7 +37,7 @@
   },
   {
     "id": "9db594a7-5da9-49ca-8df7-6ac6fa03b90b",
-    "body": "Nam tristique tortor eu pede.",
+    "body": ":disappointed: Nam tristique tortor eu pede.",
     "sender": {
     	"id":"e7fe026d-49e8-4c21-919c-215369d269bb",
     	"firstName": "Stan",
