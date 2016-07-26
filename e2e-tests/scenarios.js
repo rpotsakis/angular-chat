@@ -65,6 +65,26 @@ describe('chat app', function() {
 
   });
 
+
+  describe('chat-details', function() {
+
+    beforeEach(function() {
+      browser.get('index.html#!/chat-list');
+      element.all(by.css('md-list-item button')).
+        get(1).
+        click();
+    });
+
+    it('should render 2nd chat-details clicked by user', function() {
+      expect(element.all(by.css('[ng-view] h2')).first().getText()).
+        toMatch(/Chat Details/);
+
+      expect(element.all(by.css('message-recieved .myapp-message img')).first().getAttribute('src')).
+        toMatch(/assets\/images\/bender.jpg/);
+    });
+
+  });
+
   describe('chat-details service error', function() {
 
     beforeEach(function() {

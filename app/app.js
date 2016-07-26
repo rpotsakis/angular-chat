@@ -42,10 +42,14 @@ angular.module('myApp', [
 				};
 			
 			for (var key in emoticons) {
-				parsed = parsed.replace(key, '<img src="' + emoticons[key] + '" style="width: 16px;" />');
+				parsed = parsed.replace(key, this.createImgTag(emoticons[key]));
 			}
 
 			return parsed;
+		},
+		createImgTag: function(src, width) {
+			width = width || 16;
+			return '<img src="' + src + '" style="width: ' + width + 'px;" />';
 		}
 	};
 });

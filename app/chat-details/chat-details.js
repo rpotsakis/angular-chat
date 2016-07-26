@@ -34,7 +34,11 @@ angular.module('myApp.chatDetails', ['ngRoute','ngSanitize'])
 
 	$scope.sanitizeData = function(data) {
 		for(var i in data) {
-			data[i].body = messageFactory.replaceEmoticons(data[i].body);
+			if(data[i].image) {
+				data[i].body = messageFactory.createImgTag(data[i].image, 250);
+			} else {
+				data[i].body = messageFactory.replaceEmoticons(data[i].body);
+			}
 		}
 
 		return data;

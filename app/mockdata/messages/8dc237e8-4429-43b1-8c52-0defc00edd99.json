@@ -32,12 +32,24 @@
     	"lastName": "Jetson",
     	"avatar": "https://robohash.org/voluptatemblanditiisid.png?size=60x60&set=set1"
     },
-    "createdDate": "5/7/2016",
-    "createdTime": "1:21 AM"
+    "createdDate": "7/26/2016",
+    "createdTime": "1:21 PM"
+  },
+  {
+    "id": "264a1a267-a8bb-40d8-9972-cb8627affe26",
+    "image": "assets/images/bender.jpg",
+    "sender": {
+    	"id":"0622a9f2-b2b6-478b-bb83-f0735c8dfc4f",
+    	"firstName": "Judy",
+    	"lastName": "Jetson",
+    	"avatar": "https://robohash.org/voluptatemblanditiisid.png?size=60x60&set=set1"
+    },
+    "createdDate": "7/26/2016",
+    "createdTime": "1:22 PM"
   },
   {
     "id": "9db594a7-5da9-49ca-8df7-6ac6fa03b90b",
-    "body": "Nam tristique tortor eu pede.",
+    "body": ":laughing: Nam tristique tortor eu pede.",
     "sender": {
     	"id":"e7fe026d-49e8-4c21-919c-215369d269bb",
     	"firstName": "Stan",
