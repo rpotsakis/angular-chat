@@ -19,9 +19,10 @@ angular.module('myApp.chatDetails', ['ngRoute'])
     }
 })
 
-.controller('ChatDetailsCtrl', ['$scope','$routeParams', '$location', '$mdDialog', 'chatDetailsService', function($scope, $routeParams, $location, $mdDialog, chatListService) {
+.controller('ChatDetailsCtrl', ['$scope','$routeParams', '$location', '$mdDialog', 'chatDetailsService', 'userFactory', function($scope, $routeParams, $location, $mdDialog, chatListService, userFactory) {
 	$scope.chatId = $routeParams.chatId
 	$scope.messages = [];
+	$scope.user = userFactory.getUser();
 
 	chatListService.getData($scope.chatId).then(function(response) {
 		$scope.messages = response.data;
@@ -42,4 +43,18 @@ angular.module('myApp.chatDetails', ['ngRoute'])
 		);
 	};
 
-}]);
+}])
+
+.directive('messageSent', function() {
+	return {
+		restrict: 'E',
+		templateUrl: 'chat-details/chat-message-sent.html'
+	};
+})
+
+.directive('messageRecieved', function() {
+	return {
+		restrict: 'E',
+		templateUrl: 'chat-details/chat-message-recieved.html'
+	};
+});

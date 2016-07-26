@@ -49,6 +49,12 @@ describe('chat app', function() {
     it('should render chat-details when user navigates to /chat-details', function() {
       expect(element.all(by.css('[ng-view] h2')).first().getText()).
         toMatch(/Chat Details/);
+
+      expect(element.all(by.css('message-recieved')).count()).
+        toEqual(3);
+
+      expect(element.all(by.css('message-sent')).count()).
+        toEqual(1);
     });
 
   });

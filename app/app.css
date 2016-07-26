@@ -26,6 +26,7 @@
 	height: 0;
 	transform: rotate(10deg);
 	bottom: -10px;
+	right: 20px;
 }
 .myapp-message-arrow:after {
 	content: "";
@@ -41,6 +42,7 @@
 }
 .myapp-message-arrow--left {
 	left: 0;
+	right: auto;
 }
 .myapp-message-arrow--left:after {
 	border-top: none;

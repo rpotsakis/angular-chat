@@ -1,0 +1,14 @@
+<div layout="row" layout-align="center end" layout-padding>
+	<div flex="none">
+		<img class="md-avatar" ng-src="{{message.sender.avatar}}" style="width:60px;">
+	</div>
+	<div class="myapp-message" flex flex-order="-1">
+		<div class="md-list-item-text">
+			<p>{{message.body}}</p>
+		</div>
+		<div class="myapp-message-arrow"></div>
+	</div>
+</div>
+<div class="myapp-message-info" layout="row" layout-align="start center" style="padding-left: 20px;">
+	<p flex="20">Me {{message.createdTime}}</p>
+</div>

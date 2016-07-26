@@ -12,19 +12,11 @@
 </md-toolbar>
 <div class="myapp-message-list">
 	<div ng-repeat="message in messages">
-		<div layout="row" layout-align="center end" layout-padding>
-			<div flex="none">
-				<img class="md-avatar" ng-src="{{message.sender.avatar}}" style="width:60px;">
-			</div>
-			<div class="myapp-message" flex>
-				<div class="md-list-item-text">
-					<p>{{message.body}}</p>
-				</div>
-				<div class="myapp-message-arrow"></div>
-			</div>
+		<div ng-if="message.sender.id == user.id">
+			<message-sent></message-sent>
 		</div>
-		<div class="myapp-message-info" layout="row" layout-align="end center">
-			<p flex="20">{{message.sender.firstName}} {{message.createdTime}}</p>
+		<div ng-if="message.sender.id != user.id">
+			<message-recieved></message-recieved>
 		</div>
 	</div>
 </div>
