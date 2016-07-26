@@ -59,6 +59,22 @@ angular.module('myApp.chatDetails', ['ngRoute','ngSanitize'])
 		);
 	};
 
+	$scope.addMessage = function() {
+		var message = {
+			id: "",
+			body: $scope.sendMessageVal,
+			sender: {
+				id: $scope.user.id,
+				firstName: $scope.user.firstName,
+				lastName: $scope.user.lastName,
+				avatar: $scope.user.avatar
+			},
+			createdDate: messageFactory.makeCreatedDate(),
+			createdTime: messageFactory.makeCreatedTime()
+		};
+		$scope.messages.push(message);
+	}
+
 }])
 
 .directive('messageSent', function() {

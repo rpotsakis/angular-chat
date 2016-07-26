@@ -28,9 +28,9 @@
 		<div layout="row" flex="100">
 			<md-input-container flex>
 				<label>Send Message</label>
-				<textarea name="sendMessage"></textarea>
+				<textarea name="sendMessage" ng-model="sendMessageVal"></textarea>
 			</md-input-container>
-			<md-button aria-label="Send" flex="none">
+			<md-button aria-label="Send" flex="none" ng-click="addMessage()">
 				<md-icon>send</md-icon>
 			</md-button>
 		</div>
