@@ -18,17 +18,41 @@ angular.module('myApp.chatList', ['ngRoute'])
     }
 })
 
-.controller('ChatListCtrl', ['$scope', '$location', 'chatListService', function($scope, $location, chatListService) {
-	$scope.chats = [];
+.service('contactListService', function($http) {
+    this.getData = function() {
+        return $http({
+            method: 'GET',
+            url: 'mockdata/contacts.json'
+         });
+    }
+})
 
-	chatListService.getData().then(function(response) {
-        $scope.chats = response.data;
-    })
-	.catch(function() {
-		$scope.error = 'unable to retrieve chat list data';
-	});
+.controller('ChatListCtrl', [
+  '$scope', '$location', '$mdSidenav', 'chatListService', 'contactListService', 
+  function($scope, $location, $mdSidenav, chatListService, contactListService) {
+	$scope.chats = [];
+  $scope.persons = [];
+
+  chatListService.getData().then(function(response) {
+    $scope.chats = response.data;
+  })
+  .catch(function() {
+    $scope.error = 'unable to retrieve chat list data';
+  });
 
   $scope.viewItem = function(id) {
     $location.path('chat-details/'+id);
   };
+
+  contactListService.getData().then(function(response) {
+        $scope.persons = response.data;
+  })
+  .catch(function() {
+    $scope.error = 'unable to retrieve contact list data';
+  });
+
+  $scope.startNewChat = function() {
+    $mdSidenav('contact-list').toggle();
+  };
+
 }]);

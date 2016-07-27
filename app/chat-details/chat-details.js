@@ -27,14 +27,19 @@ angular.module('myApp.chatDetails', ['ngRoute','ngSanitize'])
 	$scope.messages = [];
 	$scope.user = userFactory.getUser();
 
-	chatListService.getData($scope.chatId).then(function(response) {
-		$scope.messages = $scope.sanitizeData(response.data);
-		$scope.scrollToBottom(2500);
-	})
-	.catch(function() {
-		$scope.showAlert();
-		$scope.error = 'unable to retrieve chat details data';
-	});
+	if ($scope.chatId == 'new') {
+		// initiate some new chat routine here
+		// should include contactId in params if this was real
+	} else {
+		chatListService.getData($scope.chatId).then(function(response) {
+			$scope.messages = $scope.sanitizeData(response.data);
+			//$scope.scrollToBottom(2500);
+		})
+		.catch(function() {
+			$scope.showAlert();
+			$scope.error = 'unable to retrieve chat details data';
+		});
+	}
 
 	$scope.sanitizeData = function(data) {
 		for(var i in data) {
