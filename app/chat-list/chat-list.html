@@ -8,10 +8,15 @@
 			</md-button>
 		</h2>
 	</md-toolbar>
-	<md-sidenav md-component-id="contact-list" id="contact-list">
+	<md-sidenav md-component-id="contact-list" id="contact-list" layout="column">
+		<md-toolbar class="md-theme-light">
+			<h3 class="md-toolbar-tools">
+				<span>Contacts</span>
+			</h3>
+		</md-toolbar>
 		<md-content flex>
 			<md-list>
-				<md-list-item class="md-3-line" ng-repeat="person in persons" ng-click="viewItem('new')">
+				<md-list-item class="md-3-line" ng-repeat="person in persons | orderBy: 'lastName'" ng-click="viewItem('new')">
 					<img class="md-avatar" ng-src="{{person.avatar}}">
 					<div class="md-list-item-text">
 						<div layout="row">
