@@ -11,6 +11,7 @@
 }
 .myapp-message-list p {
 	margin: 0;
+	white-space: pre-wrap;
 }
 .myapp-message-info {
 	position: relative;

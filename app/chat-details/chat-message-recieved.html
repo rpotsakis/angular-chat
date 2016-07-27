@@ -1,5 +1,5 @@
-<div layout="row" layout-align="center end" layout-padding>
-	<div flex="none">
+<div layout="row" layout-align="center end" layout-padding style="padding-right: 0; padding-left: 0;">
+	<div flex="none" style="padding-left: 0;"">
 		<img class="md-avatar" ng-src="{{message.sender.avatar}}" style="width:60px;">
 	</div>
 	<div class="myapp-message" flex>
@@ -10,5 +10,5 @@
 	</div>
 </div>
 <div class="myapp-message-info" layout="row" layout-align="end center">
-	<p flex="20">{{message.sender.firstName}} {{message.createdTime}}</p>
+	<p flex="30" style="text-align: right;">{{message.sender.firstName}} {{message.createdTime}}</p>
 </div>
