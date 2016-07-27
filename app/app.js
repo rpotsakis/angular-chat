@@ -47,9 +47,10 @@ angular.module('myApp', [
 
 			return parsed;
 		},
-		createImgTag: function(src, width) {
+		createImgTag: function(src, width, units) {
 			width = width || 16;
-			return '<img src="' + src + '" style="width: ' + width + 'px;" />';
+			units = units || 'px';
+			return '<img src="' + src + '" style="width: ' + width + units + ';" />';
 		},
 		makeCreatedDate: function() {
 			var currentDate =  new Date();
