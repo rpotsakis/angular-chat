@@ -10,7 +10,10 @@
 	</md-toolbar>
 
 	<md-content flex layout-padding id="myapp-messages-content">
-		<div ng-repeat="message in messages"  class="myapp-message-list">
+		<div ng-repeat="message in messages" class="myapp-message-list">
+			<div ng-if="$index == 0 || messages[$index-1].createdDate != messages[$index].createdDate">
+				<date-separator date="{{message.createdDate}}"></date-separator>
+			</div>
 			<div ng-if="message.sender.id == user.id">
 				<message-sent></message-sent>
 			</div>

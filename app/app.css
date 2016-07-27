@@ -13,6 +13,9 @@
 	margin: 0;
 	white-space: pre-wrap;
 }
+.myapp-message-list date-separator {
+	text-align: center;
+}
 .myapp-message-info {
 	position: relative;
     top: -34px;

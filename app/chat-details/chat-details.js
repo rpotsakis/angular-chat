@@ -111,4 +111,12 @@ angular.module('myApp.chatDetails', ['ngRoute','ngSanitize'])
 		restrict: 'E',
 		templateUrl: 'chat-details/chat-message-recieved.html'
 	};
+})
+
+.directive('dateSeparator', function() {
+  return {
+  	link: function link(scope, element, attrs) {
+    	element.html('<h6>' + attrs.date + '</h6>');
+  	}
+  };
 });
