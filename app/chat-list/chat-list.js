@@ -17,7 +17,7 @@ angular.module('myApp.chatList', ['ngRoute'])
          });
     }
 })
-
+/*
 .service('contactListService', function($http) {
     this.getData = function() {
         return $http({
@@ -26,7 +26,7 @@ angular.module('myApp.chatList', ['ngRoute'])
          });
     }
 })
-
+*/
 .controller('ChatListCtrl', [
   '$scope', '$location', '$mdSidenav', 'chatListService', 'contactListService', 
   function($scope, $location, $mdSidenav, chatListService, contactListService) {
