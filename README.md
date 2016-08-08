@@ -1,9 +1,9 @@
 # angular-chat — sample angularJS app that mimics Messenger type apps
 
 This project is built with
-[AngularJS](http://angularjs.org/)
-[Angular Seed](https://github.com/angular/angular-seed)
-[Angular Material](https://material.angularjs.org)
+* [AngularJS](http://angularjs.org/)
+* [Angular Seed](https://github.com/angular/angular-seed)
+* [Angular Material](https://material.angularjs.org)
 
 ## Getting Started
 
